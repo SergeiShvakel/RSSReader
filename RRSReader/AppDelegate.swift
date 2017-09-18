@@ -7,15 +7,31 @@
 //
 
 import UIKit
+import RealmSwift
+import Alamofire
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var startViewController: RRSStartViewController? = nil
+    var listViewController : ViewController? = nil          // Контроллер для окна с навигацией
+    
+    var model : RRSModel? = nil // Хранение и обработка данных
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        model = RRSModel(url:"https://news.tut.by/rss/index.rss")
+        
+        self.window = UIWindow.init(frame: UIScreen.main.bounds)
+        
+        startViewController = RRSStartViewController()
+        
+        self.window!.rootViewController = startViewController
+        
+        self.window!.makeKeyAndVisible()
+        
         return true
     }
 
@@ -41,6 +57,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func showViewController () -> Void
+    {
+        var storyBoard : UIStoryboard? = nil
+        storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        
+        listViewController = storyBoard!.instantiateViewController(withIdentifier: "StartController") as? ViewController
+        
+        self.window!.rootViewController = listViewController
+        self.window!.makeKeyAndVisible()
+    }
 
 }
 

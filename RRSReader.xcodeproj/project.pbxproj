@@ -7,14 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49106B0E1F6D07DE0023C517 /* RRSStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49106B0C1F6D07DE0023C517 /* RRSStartViewController.swift */; };
+		49106B0F1F6D07DE0023C517 /* RRSStartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49106B0D1F6D07DE0023C517 /* RRSStartViewController.xib */; };
+		49106B151F6D0E6D0023C517 /* RRSModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49106B141F6D0E6D0023C517 /* RRSModel.swift */; };
+		4913CC601F6DB51900514667 /* PieceOfNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4913CC5F1F6DB51900514667 /* PieceOfNews.swift */; };
 		496B41301F69C50B00FA8246 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B412F1F69C50B00FA8246 /* AppDelegate.swift */; };
 		496B41321F69C50B00FA8246 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B41311F69C50B00FA8246 /* ViewController.swift */; };
 		496B41351F69C50B00FA8246 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 496B41331F69C50B00FA8246 /* Main.storyboard */; };
 		496B41371F69C50B00FA8246 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 496B41361F69C50B00FA8246 /* Assets.xcassets */; };
 		496B413A1F69C50B00FA8246 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 496B41381F69C50B00FA8246 /* LaunchScreen.storyboard */; };
+		49F16AAE1F6D182D00C38ABF /* RRSModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F16AAD1F6D182D00C38ABF /* RRSModelProtocol.swift */; };
+		B761F33B9286A4B29E7CA028 /* Pods_RRSReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C484E26FEA0B526D53B6CC54 /* Pods_RRSReader.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F772E8ECB06D03D7FF721BE /* Pods-RRSReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RRSReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RRSReader/Pods-RRSReader.debug.xcconfig"; sourceTree = "<group>"; };
+		49106B0C1F6D07DE0023C517 /* RRSStartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RRSStartViewController.swift; path = StartViewController/RRSStartViewController.swift; sourceTree = "<group>"; };
+		49106B0D1F6D07DE0023C517 /* RRSStartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RRSStartViewController.xib; path = StartViewController/RRSStartViewController.xib; sourceTree = "<group>"; };
+		49106B141F6D0E6D0023C517 /* RRSModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RRSModel.swift; sourceTree = "<group>"; };
+		4913CC5F1F6DB51900514667 /* PieceOfNews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieceOfNews.swift; sourceTree = "<group>"; };
 		496B412C1F69C50B00FA8246 /* RRSReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RRSReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		496B412F1F69C50B00FA8246 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		496B41311F69C50B00FA8246 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +33,9 @@
 		496B41361F69C50B00FA8246 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		496B41391F69C50B00FA8246 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		496B413B1F69C50B00FA8246 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49F16AAD1F6D182D00C38ABF /* RRSModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RRSModelProtocol.swift; sourceTree = "<group>"; };
+		C484E26FEA0B526D53B6CC54 /* Pods_RRSReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RRSReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF6D67FA7E001EE43259684E /* Pods-RRSReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RRSReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-RRSReader/Pods-RRSReader.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +43,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B761F33B9286A4B29E7CA028 /* Pods_RRSReader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1094C27C4490ED732BA2B340 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C484E26FEA0B526D53B6CC54 /* Pods_RRSReader.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		496B41231F69C50A00FA8246 = {
 			isa = PBXGroup;
 			children = (
 				496B412E1F69C50B00FA8246 /* RRSReader */,
 				496B412D1F69C50B00FA8246 /* Products */,
+				F9B3E8FA56671D86C70C95B5 /* Pods */,
+				1094C27C4490ED732BA2B340 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,8 +85,22 @@
 				496B41361F69C50B00FA8246 /* Assets.xcassets */,
 				496B41381F69C50B00FA8246 /* LaunchScreen.storyboard */,
 				496B413B1F69C50B00FA8246 /* Info.plist */,
+				49106B0C1F6D07DE0023C517 /* RRSStartViewController.swift */,
+				49106B0D1F6D07DE0023C517 /* RRSStartViewController.xib */,
+				49106B141F6D0E6D0023C517 /* RRSModel.swift */,
+				49F16AAD1F6D182D00C38ABF /* RRSModelProtocol.swift */,
+				4913CC5F1F6DB51900514667 /* PieceOfNews.swift */,
 			);
 			path = RRSReader;
+			sourceTree = "<group>";
+		};
+		F9B3E8FA56671D86C70C95B5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2F772E8ECB06D03D7FF721BE /* Pods-RRSReader.debug.xcconfig */,
+				CF6D67FA7E001EE43259684E /* Pods-RRSReader.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 496B413E1F69C50B00FA8246 /* Build configuration list for PBXNativeTarget "RRSReader" */;
 			buildPhases = (
+				C3CF1F543A12C1FB03D33CC4 /* [CP] Check Pods Manifest.lock */,
 				496B41281F69C50A00FA8246 /* Sources */,
 				496B41291F69C50A00FA8246 /* Frameworks */,
 				496B412A1F69C50A00FA8246 /* Resources */,
+				8FC22C573D2E816F2700844A /* [CP] Embed Pods Frameworks */,
+				D7954B10E48D8D646508247B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -126,10 +168,69 @@
 				496B413A1F69C50B00FA8246 /* LaunchScreen.storyboard in Resources */,
 				496B41371F69C50B00FA8246 /* Assets.xcassets in Resources */,
 				496B41351F69C50B00FA8246 /* Main.storyboard in Resources */,
+				49106B0F1F6D07DE0023C517 /* RRSStartViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8FC22C573D2E816F2700844A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RRSReader/Pods-RRSReader-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RRSReader/Pods-RRSReader-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3CF1F543A12C1FB03D33CC4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RRSReader-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7954B10E48D8D646508247B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RRSReader/Pods-RRSReader-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		496B41281F69C50A00FA8246 /* Sources */ = {
@@ -137,7 +238,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				496B41321F69C50B00FA8246 /* ViewController.swift in Sources */,
+				49106B151F6D0E6D0023C517 /* RRSModel.swift in Sources */,
+				4913CC601F6DB51900514667 /* PieceOfNews.swift in Sources */,
+				49F16AAE1F6D182D00C38ABF /* RRSModelProtocol.swift in Sources */,
 				496B41301F69C50B00FA8246 /* AppDelegate.swift in Sources */,
+				49106B0E1F6D07DE0023C517 /* RRSStartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +361,7 @@
 		};
 		496B413F1F69C50B00FA8246 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F772E8ECB06D03D7FF721BE /* Pods-RRSReader.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RRSReader/Info.plist;
@@ -268,6 +374,7 @@
 		};
 		496B41401F69C50B00FA8246 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF6D67FA7E001EE43259684E /* Pods-RRSReader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RRSReader/Info.plist;
@@ -297,6 +404,7 @@
 				496B41401F69C50B00FA8246 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
