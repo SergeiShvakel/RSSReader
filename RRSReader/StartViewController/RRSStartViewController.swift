@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class RRSStartViewController: UIViewController, RRSModelProtocol
 {
@@ -58,7 +59,7 @@ class RRSStartViewController: UIViewController, RRSModelProtocol
         
         threadDict?.setValue(exitNow, forKey: "ThreadShouldExitNow")
         
-        // Загрузка данных
+        // Загрузка данных - список новостей
         app?.model?.loadData()
     
         while (!exitNow)
@@ -82,7 +83,7 @@ class RRSStartViewController: UIViewController, RRSModelProtocol
         var app : AppDelegate? = nil
         app = UIApplication.shared.delegate as! AppDelegate?
     
-        var model : RRSModel? = object as! RRSModel?
+        let model : RRSModel? = object as! RRSModel?
     
         self.dismiss(animated: false, completion: nil)
         app!.showViewController()

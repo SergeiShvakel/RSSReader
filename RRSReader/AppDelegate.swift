@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var startViewController: RRSStartViewController? = nil
-    var listViewController : ViewController? = nil          // Контроллер для окна с навигацией
+    var navigateViewController : RRSNavigateController? = nil          // Контроллер для окна с навигацией
     
     var model : RRSModel? = nil // Хранение и обработка данных
 
@@ -62,9 +62,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var storyBoard : UIStoryboard? = nil
         storyBoard = UIStoryboard(name: "Main", bundle: nil)
         
-        listViewController = storyBoard!.instantiateViewController(withIdentifier: "StartController") as? ViewController
+        navigateViewController = storyBoard!.instantiateViewController(withIdentifier: "StartNavigateController") as? RRSNavigateController
         
-        self.window!.rootViewController = listViewController
+        self.window!.rootViewController = navigateViewController
         self.window!.makeKeyAndVisible()
     }
 

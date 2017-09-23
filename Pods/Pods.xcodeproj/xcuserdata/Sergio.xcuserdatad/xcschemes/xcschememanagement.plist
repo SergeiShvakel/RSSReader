@@ -24,25 +24,35 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SWXMLHash.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2F74D4A0A8961084ED252061552CB052</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>3EE1A1C77BCA323C58B9F35CDF93889A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>868705274721CB9945F12647642F843A</key>
+		<key>2318181DABB2E460FDFB50C90EB6E690</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C743A45E978A388F01A06A5655C35434</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DD6F757ACD34928B4182B48CAC4C207A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DF673A574CF6053CC5081FB3B904BE0D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

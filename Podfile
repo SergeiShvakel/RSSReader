@@ -8,5 +8,6 @@ target 'RRSReader' do
   # Pods for RRSReader
   pod 'RealmSwift'
   pod 'Alamofire'
+  pod 'SWXMLHash'
 
 end
