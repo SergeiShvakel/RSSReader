@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class TableViewCell: UITableViewCell {
 
@@ -14,6 +15,8 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var categoryNews: UILabel!
     @IBOutlet weak var dateNews: UILabel!
     @IBOutlet weak var imageNews: UIImageView!
+    
+    var request: Alamofire.DataRequest?
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -20,6 +20,7 @@
 		496B413A1F69C50B00FA8246 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 496B41381F69C50B00FA8246 /* LaunchScreen.storyboard */; };
 		49E5EE7B1F767A9000CF92EF /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E5EE7A1F767A9000CF92EF /* TableViewCell.swift */; };
 		49F16AAE1F6D182D00C38ABF /* RRSModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F16AAD1F6D182D00C38ABF /* RRSModelProtocol.swift */; };
+		49FAE4931F78315D005015B2 /* ViewDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FAE4921F78315D005015B2 /* ViewDetailController.swift */; };
 		B761F33B9286A4B29E7CA028 /* Pods_RRSReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C484E26FEA0B526D53B6CC54 /* Pods_RRSReader.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		496B413B1F69C50B00FA8246 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49E5EE7A1F767A9000CF92EF /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		49F16AAD1F6D182D00C38ABF /* RRSModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RRSModelProtocol.swift; sourceTree = "<group>"; };
+		49FAE4921F78315D005015B2 /* ViewDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewDetailController.swift; sourceTree = "<group>"; };
 		C484E26FEA0B526D53B6CC54 /* Pods_RRSReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RRSReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF6D67FA7E001EE43259684E /* Pods-RRSReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RRSReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-RRSReader/Pods-RRSReader.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,6 +90,7 @@
 				496B412F1F69C50B00FA8246 /* AppDelegate.swift */,
 				496B41311F69C50B00FA8246 /* ViewController.swift */,
 				496B41331F69C50B00FA8246 /* Main.storyboard */,
+				49FAE4921F78315D005015B2 /* ViewDetailController.swift */,
 				49E5EE7A1F767A9000CF92EF /* TableViewCell.swift */,
 				4933ED791F7661BF00A64557 /* RRSNavigateController.swift */,
 				496B41361F69C50B00FA8246 /* Assets.xcassets */,
@@ -249,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4933ED7A1F7661BF00A64557 /* RRSNavigateController.swift in Sources */,
+				49FAE4931F78315D005015B2 /* ViewDetailController.swift in Sources */,
 				493D87D71F7592A7000A11DA /* NewsRecord.swift in Sources */,
 				496B41321F69C50B00FA8246 /* ViewController.swift in Sources */,
 				49E5EE7B1F767A9000CF92EF /* TableViewCell.swift in Sources */,
