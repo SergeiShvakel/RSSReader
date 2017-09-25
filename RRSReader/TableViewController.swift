@@ -10,11 +10,11 @@ import UIKit
 import Alamofire
 import RealmSwift
 
-class ViewController: UITableViewController {
+class TableViewController: UITableViewController {
 
-    weak var model : RRSModel?
+    weak var model : RSSModel?
     
-    init?(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, model: RRSModel?) {
+    init?(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, model: RSSModel?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
         self.model = model;
@@ -73,7 +73,6 @@ class ViewController: UITableViewController {
         let oneNews = app?.model?.newsList[indexPath.row]
         
         let dateFormat : DateFormatter = DateFormatter()
-        //dateFormat.dateFormat = "dd MMM yyyy HH:mm"
         dateFormat.dateFormat = "dd MMM yyyy"
         
         cell?.titleNews?.text = oneNews?.titleNews
@@ -139,15 +138,15 @@ class ViewController: UITableViewController {
         var app : AppDelegate? = nil
         app = UIApplication.shared.delegate as! AppDelegate?
         
-        var viewDetailController : ViewDetailController? = nil
+        var detailViewController : DetailViewController? = nil
         
         var storyBoard : UIStoryboard? = nil
         storyBoard = UIStoryboard(name: "Main", bundle: nil)
         
-        viewDetailController = storyBoard!.instantiateViewController(withIdentifier: "ViewDetailController") as? ViewDetailController
-        viewDetailController?.index = indexPath
+        detailViewController = storyBoard!.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController
+        detailViewController?.index = indexPath
         
-        app?.navigateViewController?.pushViewController(viewDetailController!, animated: true)
+        app?.navigateViewController?.pushViewController(detailViewController!, animated: true)
         
         tableView.deselectRow(at: indexPath, animated: false)
         

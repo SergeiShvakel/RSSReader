@@ -11,10 +11,10 @@ import Alamofire
 import RealmSwift
 import SWXMLHash
 
-class RRSModel
+class RSSModel
 {
     var url : String;
-    var delegate : RRSModelProtocol? = nil
+    var delegate : RSSModelProtocol? = nil
     
     var rrsNewsRealm : Realm! //
     var newsList: Results<NewsRecord> {

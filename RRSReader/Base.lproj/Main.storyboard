@@ -9,7 +9,7 @@
         <!--RSS Reader-->
         <scene sceneID="G0x-De-NFW">
             <objects>
-                <tableViewController id="eXo-i9-Qlp" customClass="ViewController" customModule="RRSReader" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="eXo-i9-Qlp" customClass="TableViewController" customModule="RRSReader" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="176" sectionHeaderHeight="28" sectionFooterHeight="28" id="VDD-PC-p8j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -19,7 +19,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="176"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="center" tableViewCell="MLo-zr-OyR" id="a6s-mD-zXY">
-                                    <frame key="frameInset" width="375" height="175"/>
+                                    <frame key="frameInset" width="375" height="176"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asW-5U-Hrt">
@@ -69,10 +69,10 @@
             </objects>
             <point key="canvasLocation" x="-714.39999999999998" y="133.5832083958021"/>
         </scene>
-        <!--View Detail Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="c29-l7-zS5">
             <objects>
-                <viewController storyboardIdentifier="ViewDetailController" id="Nei-mZ-4HH" customClass="ViewDetailController" customModule="RRSReader" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="Nei-mZ-4HH" customClass="DetailViewController" customModule="RRSReader" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UQu-Up-Efo"/>
                         <viewControllerLayoutGuide type="bottom" id="iYz-Bd-krT"/>
@@ -123,7 +123,7 @@
         <!--Navigate Controller-->
         <scene sceneID="WRt-qt-Oy7">
             <objects>
-                <navigationController storyboardIdentifier="StartNavigateController" id="xJ9-F1-8fx" customClass="RRSNavigateController" customModule="RRSReader" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="StartNavigateController" id="xJ9-F1-8fx" customClass="NavigateController" customModule="RRSReader" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WHb-YG-pgo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

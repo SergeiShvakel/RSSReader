@@ -1,5 +1,5 @@
 //
-//  RRSStartViewController.swift
+//  StartViewController.swift
 //  RRSReader
 //
 //  Created by Сергей Швакель on 16.09.17.
@@ -9,19 +9,27 @@
 import UIKit
 import RealmSwift
 
-class RRSStartViewController: UIViewController, RRSModelProtocol
+class StartViewController: UIViewController, RSSModelProtocol
 {
     var m_loadingThread : Thread?  // Отдельный поток для инициализации класса модели
+    weak var model : RSSModel? = nil
+    
+    init (_ model : RSSModel)
+    {
+        super.init(nibName: nil, bundle: nil)
+        self.model = model
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        var app : AppDelegate? = nil
-        app = UIApplication.shared.delegate as! AppDelegate?
+        model?.delegate = self;
         
-        app?.model?.delegate = self;
-        
-        m_loadingThread = Thread.init(target: self, selector: #selector(threadParallelProc), object: nil)
+        m_loadingThread = Thread.init(target: self, selector: #selector(threadParallelProc), object: model)
         m_loadingThread?.start()
     }
 
@@ -44,10 +52,9 @@ class RRSStartViewController: UIViewController, RRSModelProtocol
     /*
         Функция потока чтения данных в модель
      */
-    @objc func threadParallelProc () -> Void
+    @objc func threadParallelProc (argument: Any?) -> Void
     {
-        var app : AppDelegate? = nil
-        app = UIApplication.shared.delegate as! AppDelegate?
+        weak var model = argument as! RSSModel?
         
         var exitNow : Bool = false
         let runLoop : RunLoop = RunLoop.current
@@ -60,7 +67,7 @@ class RRSStartViewController: UIViewController, RRSModelProtocol
         threadDict?.setValue(exitNow, forKey: "ThreadShouldExitNow")
         
         // Загрузка данных - список новостей
-        app?.model?.loadData()
+        model?.loadData()
     
         while (!exitNow)
         {
@@ -82,18 +89,16 @@ class RRSStartViewController: UIViewController, RRSModelProtocol
     {
         var app : AppDelegate? = nil
         app = UIApplication.shared.delegate as! AppDelegate?
-    
-        let model : RRSModel? = object as! RRSModel?
-    
-        self.dismiss(animated: false, completion: nil)
-        app!.showViewController()
         
+        self.dismiss(animated: true, completion: nil)
+        
+        app!.showViewController()
     }
     
     /////////////////////////////////////////////////////////////////////////////////////////
-    // Методы протокола RRSModelProtocol
+    // Methods of protocol RSSModelProtocol
     
-    func loadingDataDidFinish(model: RRSModel?) -> Void
+    func loadingDataDidFinish(model: RSSModel?) -> Void
     {
         // Останавливаем поток
         m_loadingThread?.threadDictionary.setValue(true, forKey: "ThreadShouldExitNow")
@@ -101,8 +106,6 @@ class RRSStartViewController: UIViewController, RRSModelProtocol
         //var selector : Selector = Selector("aThreadHasFinished")
         
         self.performSelector(onMainThread: #selector(aThreadHasFinished(object:)), with: model, waitUntilDone: false)
-        
-        //[self performSelectorOnMainThread:@selector(aThreadHasFinished:) withObject:model waitUntilDone:NO];
     }
     
 }

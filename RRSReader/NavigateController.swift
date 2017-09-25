@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RRSNavigateController: UINavigationController {
+class NavigateController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

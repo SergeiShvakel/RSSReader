@@ -8,8 +8,8 @@
 
 import Foundation
 
-protocol RRSModelProtocol
+protocol RSSModelProtocol
 {
-    func loadingDataDidFinish(model: RRSModel?) -> Void
+    func loadingDataDidFinish(model: RSSModel?) -> Void
 
 }

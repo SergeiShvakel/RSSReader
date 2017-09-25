@@ -1,5 +1,5 @@
 //
-//  ViewDetailController.swift
+//  DetailViewController.swift
 //  RRSReader
 //
 //  Created by Сергей Швакель on 24.09.17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewDetailController: UIViewController {
+class DetailViewController: UIViewController {
 
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!

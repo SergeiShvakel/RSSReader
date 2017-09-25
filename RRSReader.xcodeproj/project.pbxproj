@@ -7,41 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		49106B0E1F6D07DE0023C517 /* RRSStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49106B0C1F6D07DE0023C517 /* RRSStartViewController.swift */; };
-		49106B0F1F6D07DE0023C517 /* RRSStartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49106B0D1F6D07DE0023C517 /* RRSStartViewController.xib */; };
-		49106B151F6D0E6D0023C517 /* RRSModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49106B141F6D0E6D0023C517 /* RRSModel.swift */; };
-		4913CC601F6DB51900514667 /* PieceOfNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4913CC5F1F6DB51900514667 /* PieceOfNews.swift */; };
-		4933ED7A1F7661BF00A64557 /* RRSNavigateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933ED791F7661BF00A64557 /* RRSNavigateController.swift */; };
+		49106B0E1F6D07DE0023C517 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49106B0C1F6D07DE0023C517 /* StartViewController.swift */; };
+		49106B0F1F6D07DE0023C517 /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49106B0D1F6D07DE0023C517 /* StartViewController.xib */; };
+		49106B151F6D0E6D0023C517 /* RSSModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49106B141F6D0E6D0023C517 /* RSSModel.swift */; };
+		4933ED7A1F7661BF00A64557 /* NavigateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933ED791F7661BF00A64557 /* NavigateController.swift */; };
 		493D87D71F7592A7000A11DA /* NewsRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493D87D61F7592A7000A11DA /* NewsRecord.swift */; };
 		496B41301F69C50B00FA8246 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B412F1F69C50B00FA8246 /* AppDelegate.swift */; };
-		496B41321F69C50B00FA8246 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B41311F69C50B00FA8246 /* ViewController.swift */; };
+		496B41321F69C50B00FA8246 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B41311F69C50B00FA8246 /* TableViewController.swift */; };
 		496B41351F69C50B00FA8246 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 496B41331F69C50B00FA8246 /* Main.storyboard */; };
 		496B41371F69C50B00FA8246 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 496B41361F69C50B00FA8246 /* Assets.xcassets */; };
 		496B413A1F69C50B00FA8246 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 496B41381F69C50B00FA8246 /* LaunchScreen.storyboard */; };
 		49E5EE7B1F767A9000CF92EF /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E5EE7A1F767A9000CF92EF /* TableViewCell.swift */; };
-		49F16AAE1F6D182D00C38ABF /* RRSModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F16AAD1F6D182D00C38ABF /* RRSModelProtocol.swift */; };
-		49FAE4931F78315D005015B2 /* ViewDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FAE4921F78315D005015B2 /* ViewDetailController.swift */; };
+		49F16AAE1F6D182D00C38ABF /* RSSModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F16AAD1F6D182D00C38ABF /* RSSModelProtocol.swift */; };
+		49FAE4931F78315D005015B2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FAE4921F78315D005015B2 /* DetailViewController.swift */; };
 		B761F33B9286A4B29E7CA028 /* Pods_RRSReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C484E26FEA0B526D53B6CC54 /* Pods_RRSReader.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2F772E8ECB06D03D7FF721BE /* Pods-RRSReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RRSReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RRSReader/Pods-RRSReader.debug.xcconfig"; sourceTree = "<group>"; };
-		49106B0C1F6D07DE0023C517 /* RRSStartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RRSStartViewController.swift; path = StartViewController/RRSStartViewController.swift; sourceTree = "<group>"; };
-		49106B0D1F6D07DE0023C517 /* RRSStartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RRSStartViewController.xib; path = StartViewController/RRSStartViewController.xib; sourceTree = "<group>"; };
-		49106B141F6D0E6D0023C517 /* RRSModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RRSModel.swift; sourceTree = "<group>"; };
-		4913CC5F1F6DB51900514667 /* PieceOfNews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieceOfNews.swift; sourceTree = "<group>"; };
-		4933ED791F7661BF00A64557 /* RRSNavigateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RRSNavigateController.swift; sourceTree = "<group>"; };
+		49106B0C1F6D07DE0023C517 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartViewController.swift; path = StartViewController/StartViewController.swift; sourceTree = "<group>"; };
+		49106B0D1F6D07DE0023C517 /* StartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StartViewController.xib; path = StartViewController/StartViewController.xib; sourceTree = "<group>"; };
+		49106B141F6D0E6D0023C517 /* RSSModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSModel.swift; sourceTree = "<group>"; };
+		4933ED791F7661BF00A64557 /* NavigateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigateController.swift; sourceTree = "<group>"; };
 		493D87D61F7592A7000A11DA /* NewsRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsRecord.swift; sourceTree = "<group>"; };
 		496B412C1F69C50B00FA8246 /* RRSReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RRSReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		496B412F1F69C50B00FA8246 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		496B41311F69C50B00FA8246 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		496B41311F69C50B00FA8246 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		496B41341F69C50B00FA8246 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		496B41361F69C50B00FA8246 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		496B41391F69C50B00FA8246 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		496B413B1F69C50B00FA8246 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49E5EE7A1F767A9000CF92EF /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		49F16AAD1F6D182D00C38ABF /* RRSModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RRSModelProtocol.swift; sourceTree = "<group>"; };
-		49FAE4921F78315D005015B2 /* ViewDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewDetailController.swift; sourceTree = "<group>"; };
+		49F16AAD1F6D182D00C38ABF /* RSSModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSModelProtocol.swift; sourceTree = "<group>"; };
+		49FAE4921F78315D005015B2 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C484E26FEA0B526D53B6CC54 /* Pods_RRSReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RRSReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF6D67FA7E001EE43259684E /* Pods-RRSReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RRSReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-RRSReader/Pods-RRSReader.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,7 +67,7 @@
 		496B41231F69C50A00FA8246 = {
 			isa = PBXGroup;
 			children = (
-				496B412E1F69C50B00FA8246 /* RRSReader */,
+				496B412E1F69C50B00FA8246 /* RSSReader */,
 				496B412D1F69C50B00FA8246 /* Products */,
 				F9B3E8FA56671D86C70C95B5 /* Pods */,
 				1094C27C4490ED732BA2B340 /* Frameworks */,
@@ -84,26 +82,50 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		496B412E1F69C50B00FA8246 /* RRSReader */ = {
+		496B412E1F69C50B00FA8246 /* RSSReader */ = {
 			isa = PBXGroup;
 			children = (
+				498283BD1F7995C60079E79A /* Contollers */,
+				498283BE1F79972B0079E79A /* Views */,
+				498283BF1F7997BA0079E79A /* Model */,
 				496B412F1F69C50B00FA8246 /* AppDelegate.swift */,
-				496B41311F69C50B00FA8246 /* ViewController.swift */,
-				496B41331F69C50B00FA8246 /* Main.storyboard */,
-				49FAE4921F78315D005015B2 /* ViewDetailController.swift */,
-				49E5EE7A1F767A9000CF92EF /* TableViewCell.swift */,
-				4933ED791F7661BF00A64557 /* RRSNavigateController.swift */,
 				496B41361F69C50B00FA8246 /* Assets.xcassets */,
 				496B41381F69C50B00FA8246 /* LaunchScreen.storyboard */,
 				496B413B1F69C50B00FA8246 /* Info.plist */,
-				49106B0C1F6D07DE0023C517 /* RRSStartViewController.swift */,
-				49106B0D1F6D07DE0023C517 /* RRSStartViewController.xib */,
-				49106B141F6D0E6D0023C517 /* RRSModel.swift */,
-				49F16AAD1F6D182D00C38ABF /* RRSModelProtocol.swift */,
-				4913CC5F1F6DB51900514667 /* PieceOfNews.swift */,
+			);
+			name = RSSReader;
+			path = RRSReader;
+			sourceTree = "<group>";
+		};
+		498283BD1F7995C60079E79A /* Contollers */ = {
+			isa = PBXGroup;
+			children = (
+				4933ED791F7661BF00A64557 /* NavigateController.swift */,
+				49106B0C1F6D07DE0023C517 /* StartViewController.swift */,
+				49106B0D1F6D07DE0023C517 /* StartViewController.xib */,
+				496B41311F69C50B00FA8246 /* TableViewController.swift */,
+				49FAE4921F78315D005015B2 /* DetailViewController.swift */,
+				496B41331F69C50B00FA8246 /* Main.storyboard */,
+			);
+			name = Contollers;
+			sourceTree = "<group>";
+		};
+		498283BE1F79972B0079E79A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				49E5EE7A1F767A9000CF92EF /* TableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		498283BF1F7997BA0079E79A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				49106B141F6D0E6D0023C517 /* RSSModel.swift */,
+				49F16AAD1F6D182D00C38ABF /* RSSModelProtocol.swift */,
 				493D87D61F7592A7000A11DA /* NewsRecord.swift */,
 			);
-			path = RRSReader;
+			name = Model;
 			sourceTree = "<group>";
 		};
 		F9B3E8FA56671D86C70C95B5 /* Pods */ = {
@@ -180,7 +202,7 @@
 				496B413A1F69C50B00FA8246 /* LaunchScreen.storyboard in Resources */,
 				496B41371F69C50B00FA8246 /* Assets.xcassets in Resources */,
 				496B41351F69C50B00FA8246 /* Main.storyboard in Resources */,
-				49106B0F1F6D07DE0023C517 /* RRSStartViewController.xib in Resources */,
+				49106B0F1F6D07DE0023C517 /* StartViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,16 +273,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4933ED7A1F7661BF00A64557 /* RRSNavigateController.swift in Sources */,
-				49FAE4931F78315D005015B2 /* ViewDetailController.swift in Sources */,
+				4933ED7A1F7661BF00A64557 /* NavigateController.swift in Sources */,
+				49FAE4931F78315D005015B2 /* DetailViewController.swift in Sources */,
 				493D87D71F7592A7000A11DA /* NewsRecord.swift in Sources */,
-				496B41321F69C50B00FA8246 /* ViewController.swift in Sources */,
+				496B41321F69C50B00FA8246 /* TableViewController.swift in Sources */,
 				49E5EE7B1F767A9000CF92EF /* TableViewCell.swift in Sources */,
-				49106B151F6D0E6D0023C517 /* RRSModel.swift in Sources */,
-				4913CC601F6DB51900514667 /* PieceOfNews.swift in Sources */,
-				49F16AAE1F6D182D00C38ABF /* RRSModelProtocol.swift in Sources */,
+				49106B151F6D0E6D0023C517 /* RSSModel.swift in Sources */,
+				49F16AAE1F6D182D00C38ABF /* RSSModelProtocol.swift in Sources */,
 				496B41301F69C50B00FA8246 /* AppDelegate.swift in Sources */,
-				49106B0E1F6D07DE0023C517 /* RRSStartViewController.swift in Sources */,
+				49106B0E1F6D07DE0023C517 /* StartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

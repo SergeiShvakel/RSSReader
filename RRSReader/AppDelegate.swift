@@ -15,18 +15,18 @@ import Alamofire
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var startViewController: RRSStartViewController? = nil
-    var navigateViewController : RRSNavigateController? = nil          // Контроллер для окна с навигацией
+    var startViewController: StartViewController? = nil
+    var navigateViewController : NavigateController? = nil          // Контроллер для окна с навигацией
     
-    var model : RRSModel? = nil // Хранение и обработка данных
+    var model : RSSModel? = nil // Хранение и обработка данных
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        model = RRSModel(url:"https://news.tut.by/rss/index.rss")
+        model = RSSModel(url:"https://news.tut.by/rss/index.rss")
         
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
         
-        startViewController = RRSStartViewController()
+        startViewController = StartViewController(model!)
         
         self.window!.rootViewController = startViewController
         
@@ -62,9 +62,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var storyBoard : UIStoryboard? = nil
         storyBoard = UIStoryboard(name: "Main", bundle: nil)
         
-        navigateViewController = storyBoard!.instantiateViewController(withIdentifier: "StartNavigateController") as? RRSNavigateController
+        self.navigateViewController = storyBoard!.instantiateViewController(withIdentifier: "StartNavigateController") as? NavigateController
         
-        self.window!.rootViewController = navigateViewController
+        self.window!.rootViewController = self.navigateViewController
         self.window!.makeKeyAndVisible()
     }
 
