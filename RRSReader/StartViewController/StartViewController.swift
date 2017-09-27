@@ -11,7 +11,7 @@ import RealmSwift
 
 class StartViewController: UIViewController, RSSModelProtocol
 {
-    var m_loadingThread : Thread?  // Отдельный поток для инициализации класса модели
+    var m_loadingThread : Thread?  // Thread for initialyzing model class
     weak var model : RSSModel? = nil
     
     init (_ model : RSSModel)
@@ -29,6 +29,7 @@ class StartViewController: UIViewController, RSSModelProtocol
 
         model?.delegate = self;
         
+        // Start loading data to Model
         m_loadingThread = Thread.init(target: self, selector: #selector(threadParallelProc), object: model)
         m_loadingThread?.start()
     }
@@ -50,7 +51,7 @@ class StartViewController: UIViewController, RSSModelProtocol
     */
 
     /*
-        Функция потока чтения данных в модель
+        Function of thread for reading data to Model
      */
     @objc func threadParallelProc (argument: Any?) -> Void
     {
@@ -66,7 +67,7 @@ class StartViewController: UIViewController, RSSModelProtocol
         
         threadDict?.setValue(exitNow, forKey: "ThreadShouldExitNow")
         
-        // Загрузка данных - список новостей
+        // Loading data - news list
         model?.loadData()
     
         while (!exitNow)
@@ -83,7 +84,7 @@ class StartViewController: UIViewController, RSSModelProtocol
     }
     
     /*
-        Метод реагирует на событие остановки параллельного потока
+        Method react on event finishing thread
     */
     func aThreadHasFinished ( object : Any? ) -> Void
     {
@@ -100,7 +101,7 @@ class StartViewController: UIViewController, RSSModelProtocol
     
     func loadingDataDidFinish(model: RSSModel?) -> Void
     {
-        // Останавливаем поток
+        // Stop thread
         m_loadingThread?.threadDictionary.setValue(true, forKey: "ThreadShouldExitNow")
         
         //var selector : Selector = Selector("aThreadHasFinished")

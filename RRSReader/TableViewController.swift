@@ -42,18 +42,12 @@ class TableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        var app : AppDelegate? = nil
-        app = UIApplication.shared.delegate as! AppDelegate?
-        
-        let num = app?.model?.newsList.count
+        let num = model?.newsList.count
         
         return num!;
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        var app : AppDelegate? = nil
-        app = UIApplication.shared.delegate as! AppDelegate?
         
         var cell : TableViewCell? = nil
             
@@ -70,7 +64,7 @@ class TableViewController: UITableViewController {
         
         //print (indexPath.row)
         
-        let oneNews = app?.model?.newsList[indexPath.row]
+        let oneNews = model?.newsList[indexPath.row]
         
         let dateFormat : DateFormatter = DateFormatter()
         dateFormat.dateFormat = "dd MMM yyyy"
@@ -80,7 +74,7 @@ class TableViewController: UITableViewController {
         cell?.categoryNews.text = oneNews?.categoryNews
         
         var bFind = false
-        for image in (app?.model?.images)!
+        for image in (model?.images)!
         {
             if (image.0 == indexPath)
             {
@@ -105,7 +99,7 @@ class TableViewController: UITableViewController {
                         {
                             cell?.imageNews!.image = image
                         }
-                        app?.model?.images.append((indexPath, image))
+                        self.model?.images.append((indexPath, image))
                 }
             }
         }

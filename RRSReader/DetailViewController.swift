@@ -17,13 +17,23 @@ class DetailViewController: UIViewController {
     
     var index : IndexPath = IndexPath()
     
+    weak var model : RSSModel?
+    
+    init?(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, model: RSSModel?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
+        self.model = model;
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        model = nil
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        var app : AppDelegate? = nil
-        app = UIApplication.shared.delegate as! AppDelegate?
         
-        let oneNews = app?.model?.newsList[index.row]
+        let oneNews = model?.newsList[index.row]
         
         print (oneNews?.titleNews)
         
@@ -34,9 +44,9 @@ class DetailViewController: UIViewController {
         titleLabel.text = oneNews?.titleNews
         descLabel.text = oneNews?.descNews
         
-        print (app?.model?.images.count)
+        //print (model?.images.count)
         
-        for image in (app?.model?.images)!
+        for image in (model?.images)!
         {
             if (image.0 == index)
             {

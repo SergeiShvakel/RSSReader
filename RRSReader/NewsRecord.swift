@@ -9,12 +9,12 @@
 import Foundation
 import RealmSwift
 
-class NewsRecord : Object {
+public class NewsRecord : Object {
     
-    dynamic var titleNews: String = ""      // <title> - Заголовок
-    dynamic var pubDateNews: Date = Date()         // <pubDate> Sat, 16 Sep 2017 16:38:00 +0300 - Дата публикации
-    dynamic var imageURLNews: String = ""   // <enclosure url=> - Картинка
-    dynamic var categoryNews: String = ""        // <category> - категория
-    dynamic var descNews: String = ""            // <description> - более полное описание
+    dynamic var titleNews: String = ""      // <title> - Title
+    dynamic var pubDateNews: Date = Date()  // <pubDate> Sat, 16 Sep 2017 16:38:00 +0300 - Date of public
+    dynamic var imageURLNews: String = ""   // <enclosure url=> - Picture
+    dynamic var categoryNews: String = ""   // <category> - Category
+    dynamic var descNews: String = ""       // <description> - More description
 
 }

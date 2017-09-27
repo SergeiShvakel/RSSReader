@@ -62,7 +62,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var storyBoard : UIStoryboard? = nil
         storyBoard = UIStoryboard(name: "Main", bundle: nil)
         
-        self.navigateViewController = storyBoard!.instantiateViewController(withIdentifier: "StartNavigateController") as? NavigateController
+        navigateViewController = storyBoard!.instantiateViewController(withIdentifier: "StartNavigateController") as? NavigateController
+        (navigateViewController?.viewControllers[0] as! TableViewController).model = model
         
         self.window!.rootViewController = self.navigateViewController
         self.window!.makeKeyAndVisible()

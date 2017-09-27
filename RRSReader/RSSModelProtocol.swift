@@ -1,5 +1,5 @@
 //
-//  RRSModelProtocol.swift
+//  RSSModelProtocol.swift
 //  RRSReader
 //
 //  Created by Сергей Швакель on 16.09.17.
