@@ -16,7 +16,6 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var imageNews: UIImageView!
     
     var index : IndexPath = IndexPath()
-    
     weak var model : RSSModel?
     
     init?(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, model: RSSModel?) {
@@ -33,28 +32,26 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let oneNews = model?.newsList[index.row]
-        
-        print (oneNews?.titleNews)
-        
-        let dateFormat : DateFormatter = DateFormatter()
-        dateFormat.dateFormat = "dd MMM yyyy HH:mm:ss"
-        
-        dateLabel.text = dateFormat.string(from: (oneNews?.pubDateNews)!)
-        titleLabel.text = oneNews?.titleNews
-        descLabel.text = oneNews?.descNews
-        
-        //print (model?.images.count)
-        
-        for image in (model?.images)!
+        if let oneNews = model?.newsList[index.row]
         {
-            if (image.0 == index)
+            let dateFormat : DateFormatter = DateFormatter()
+            dateFormat.dateFormat = "dd MMM yyyy HH:mm:ss"
+            
+            dateLabel.text = dateFormat.string(from: (oneNews.pubDateNews))
+            titleLabel.text = oneNews.titleNews
+            descLabel.text = oneNews.descNews
+            
+            //print (model?.images.count)
+            
+            for image in (model?.images)!
             {
-                imageNews.image = image.1
-                break
+                if (image.0 == index)
+                {
+                    imageNews.image = image.1
+                    break
+                }
             }
         }
-        
     }
 
     override func didReceiveMemoryWarning() {

@@ -11,7 +11,7 @@ import RealmSwift
 
 class StartViewController: UIViewController, RSSModelProtocol
 {
-    var m_loadingThread : Thread?  // Thread for initialyzing model class
+    //var m_loadingThread : Thread?  // Thread for initialyzing model class
     weak var model : RSSModel? = nil
     
     init (_ model : RSSModel)
@@ -30,8 +30,22 @@ class StartViewController: UIViewController, RSSModelProtocol
         model?.delegate = self;
         
         // Start loading data to Model
-        m_loadingThread = Thread.init(target: self, selector: #selector(threadParallelProc), object: model)
-        m_loadingThread?.start()
+        /*m_loadingThread = Thread.init(target: self, selector: #selector(threadParallelProc), object: model)
+        m_loadingThread?.start()*/
+        
+        let queue = DispatchQueue.global(qos: .userInitiated)
+        
+        let loadingDataDispItem = DispatchWorkItem(){
+            self.model?.loadData()
+        }
+        
+        queue.async(execute: loadingDataDispItem)
+        
+        loadingDataDispItem.notify(queue: DispatchQueue.main)
+        {
+            self.dismiss(animated: true, completion: nil)
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,7 +53,6 @@ class StartViewController: UIViewController, RSSModelProtocol
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 
@@ -53,7 +66,7 @@ class StartViewController: UIViewController, RSSModelProtocol
     /*
         Function of thread for reading data to Model
      */
-    @objc func threadParallelProc (argument: Any?) -> Void
+    /*@objc func threadParallelProc (argument: Any?) -> Void
     {
         weak var model = argument as! RSSModel?
         
@@ -81,19 +94,14 @@ class StartViewController: UIViewController, RSSModelProtocol
         }
     
         return;
-    }
+    }*/
     
     /*
         Method react on event finishing thread
     */
     func aThreadHasFinished ( object : Any? ) -> Void
     {
-        var app : AppDelegate? = nil
-        app = UIApplication.shared.delegate as! AppDelegate?
-        
         self.dismiss(animated: true, completion: nil)
-        
-        app!.showViewController()
     }
     
     /////////////////////////////////////////////////////////////////////////////////////////
@@ -102,11 +110,9 @@ class StartViewController: UIViewController, RSSModelProtocol
     func loadingDataDidFinish(model: RSSModel?) -> Void
     {
         // Stop thread
-        m_loadingThread?.threadDictionary.setValue(true, forKey: "ThreadShouldExitNow")
+        //m_loadingThread?.threadDictionary.setValue(true, forKey: "ThreadShouldExitNow")
         
-        //var selector : Selector = Selector("aThreadHasFinished")
-        
-        self.performSelector(onMainThread: #selector(aThreadHasFinished(object:)), with: model, waitUntilDone: false)
+        //self.performSelector(onMainThread: #selector(aThreadHasFinished(object:)), with: model, waitUntilDone: false)
     }
     
 }

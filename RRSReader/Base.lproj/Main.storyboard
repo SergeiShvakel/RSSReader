@@ -64,10 +64,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="RSS Reader" id="png-ea-7CS"/>
+                    <connections>
+                        <segue destination="Nei-mZ-4HH" kind="showDetail" id="I3c-me-4y2"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oy0-k6-849" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-714.39999999999998" y="133.5832083958021"/>
+            <point key="canvasLocation" x="-906" y="134"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="c29-l7-zS5">
@@ -103,7 +106,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aVw-aH-ELD">
-                                <frame key="frameInset" minX="16" minY="343" width="343" height="283"/>
+                                <frame key="frameInset" minX="16" minY="335" width="343" height="283"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -118,7 +121,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LSC-GW-bRy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.80000000000000004" y="130.88455772113943"/>
+            <point key="canvasLocation" x="-105" y="134"/>
         </scene>
         <!--Navigate Controller-->
         <scene sceneID="WRt-qt-Oy7">
@@ -129,12 +132,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="eXo-i9-Qlp" kind="relationship" relationship="rootViewController" id="LiM-q8-X3n"/>
+                        <segue destination="eXo-i9-Qlp" kind="relationship" relationship="rootViewController" id="JWi-AJ-tXd"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pNK-Du-Fnh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1426" y="134"/>
+            <point key="canvasLocation" x="-1727" y="134"/>
         </scene>
     </scenes>
 </document>

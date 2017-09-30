@@ -28,7 +28,10 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view, typically from a nib.
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Refresh", style: .plain, target: self, action: #selector(didPressRefreshButton))
+        
+        didPressRefreshButton()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -139,11 +142,21 @@ class TableViewController: UITableViewController {
         
         detailViewController = storyBoard!.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController
         detailViewController?.index = indexPath
+        detailViewController?.model = model
         
         app?.navigateViewController?.pushViewController(detailViewController!, animated: true)
         
         tableView.deselectRow(at: indexPath, animated: false)
         
     }
+    
+    func didPressRefreshButton() -> Void{
+        
+        model?.clearData()
+        
+        let startViewController = StartViewController(model!)
+        self.present(startViewController, animated: true, completion: nil)
+    }
+    
 }
 

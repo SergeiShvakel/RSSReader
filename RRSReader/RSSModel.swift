@@ -32,6 +32,12 @@ class RSSModel
         rrsNewsRealm = try! Realm();
     }
     
+    func clearData()->Void{
+        
+        images.removeAll()
+        
+    }
+    
     func loadData()->Void
     {
         var dataRequest : DataRequest? = nil

@@ -26,12 +26,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
         
-        startViewController = StartViewController(model!)
+        var storyBoard : UIStoryboard? = nil
+        storyBoard = UIStoryboard(name: "Main", bundle: nil)
         
-        self.window!.rootViewController = startViewController
+        navigateViewController = storyBoard!.instantiateViewController(withIdentifier: "StartNavigateController") as? NavigateController
+        (navigateViewController?.viewControllers[0] as! TableViewController).model = model
         
+        self.window!.rootViewController = self.navigateViewController
         self.window!.makeKeyAndVisible()
-        
+            
         return true
     }
 
@@ -57,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-    func showViewController () -> Void
+    /*func showViewController () -> Void
     {
         var storyBoard : UIStoryboard? = nil
         storyBoard = UIStoryboard(name: "Main", bundle: nil)
@@ -67,7 +70,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window!.rootViewController = self.navigateViewController
         self.window!.makeKeyAndVisible()
-    }
-
+    }*/
 }
 
