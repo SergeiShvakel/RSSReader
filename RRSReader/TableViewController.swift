@@ -12,18 +12,7 @@ import RealmSwift
 
 class TableViewController: UITableViewController {
 
-    weak var model : RSSModel?
-    
-    init?(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, model: RSSModel?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        
-        self.model = model;
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        model = nil
-    }
+    var model : RSSModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +20,6 @@ class TableViewController: UITableViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Refresh", style: .plain, target: self, action: #selector(didPressRefreshButton))
         
         didPressRefreshButton()
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,13 +34,13 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         let num = model?.newsList.count
-        
+
         return num!;
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var cell : TableViewCell? = nil
+        var cell : TableViewCell?
             
         cell = tableView.dequeueReusableCell(withIdentifier: "newsCell") as! TableViewCell?
         if (cell == nil)
@@ -65,8 +53,6 @@ class TableViewController: UITableViewController {
             cell?.request?.cancel()
         }
         
-        //print (indexPath.row)
-        
         let oneNews = model?.newsList[indexPath.row]
         
         let dateFormat : DateFormatter = DateFormatter()
@@ -75,21 +61,11 @@ class TableViewController: UITableViewController {
         cell?.titleNews?.text = oneNews?.titleNews
         cell?.dateNews.text = dateFormat.string(from: (oneNews?.pubDateNews)!)
         cell?.categoryNews.text = oneNews?.categoryNews
+        cell?.imageNews?.image = model?.getImageByIndex(indexPath)
         
-        var bFind = false
-        for image in (model?.images)!
+        if (cell?.imageNews?.image == nil)
         {
-            if (image.0 == indexPath)
-            {
-                cell?.imageNews!.image = image.1
-                bFind = true
-                break
-            }
-        }
-        
-        if (bFind == false)
-        {
-            // Загрузка картинки
+            // Download picture from URL
             if let mediaUrl = (oneNews?.imageURLNews)
             {
                 cell?.request = Alamofire.request(mediaUrl)
@@ -97,11 +73,8 @@ class TableViewController: UITableViewController {
                         response in
                         
                         let image = UIImage(data: response.data!)
-                        
-                        if (cell != nil)
-                        {
-                            cell?.imageNews!.image = image
-                        }
+                        cell?.imageNews!.image = image
+
                         self.model?.images.append((indexPath, image))
                 }
             }
@@ -116,31 +89,24 @@ class TableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        var height : CGFloat = tableView.rowHeight;
-        
-        height = 150.0
+        let height : CGFloat = 150.0;
         
         return height
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        /*let alert : UIAlertController = UIAlertController(title: "My Alert", message: "This is an alert.", preferredStyle: .alert)
-        let defaultAction : UIAlertAction = UIAlertAction(title: "Ok", style: .`default`, handler: nil)
+        let app : AppDelegate? = UIApplication.shared.delegate as! AppDelegate?
         
-        alert.addAction(defaultAction)
+        let storyBoard : UIStoryboard? = UIStoryboard(name: "Main", bundle: nil)
         
-        present(alert, animated: true, completion: nil)*/
+        let detailViewController : DetailViewController? =
+            storyBoard!.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController
         
-        var app : AppDelegate? = nil
-        app = UIApplication.shared.delegate as! AppDelegate?
+        guard (detailViewController != nil) else {
+            return
+        }
         
-        var detailViewController : DetailViewController? = nil
-        
-        var storyBoard : UIStoryboard? = nil
-        storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        
-        detailViewController = storyBoard!.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController
         detailViewController?.index = indexPath
         detailViewController?.model = model
         

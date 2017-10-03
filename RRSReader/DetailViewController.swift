@@ -15,24 +15,13 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var descLabel: UILabel!
     @IBOutlet weak var imageNews: UIImageView!
     
-    var index : IndexPath = IndexPath()
-    weak var model : RSSModel?
-    
-    init?(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, model: RSSModel?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    var index : IndexPath?
+    var model : RSSModel?
         
-        self.model = model;
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        model = nil
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let oneNews = model?.newsList[index.row]
+        if let oneNews = model?.newsList[(index?.row)!]
         {
             let dateFormat : DateFormatter = DateFormatter()
             dateFormat.dateFormat = "dd MMM yyyy HH:mm:ss"
@@ -41,16 +30,7 @@ class DetailViewController: UIViewController {
             titleLabel.text = oneNews.titleNews
             descLabel.text = oneNews.descNews
             
-            //print (model?.images.count)
-            
-            for image in (model?.images)!
-            {
-                if (image.0 == index)
-                {
-                    imageNews.image = image.1
-                    break
-                }
-            }
+            imageNews.image = model?.getImageByIndex(index!)
         }
     }
 

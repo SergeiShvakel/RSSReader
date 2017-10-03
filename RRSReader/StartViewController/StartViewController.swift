@@ -9,14 +9,14 @@
 import UIKit
 import RealmSwift
 
-class StartViewController: UIViewController, RSSModelProtocol
+class StartViewController: UIViewController
 {
-    //var m_loadingThread : Thread?  // Thread for initialyzing model class
-    weak var model : RSSModel? = nil
+    var model : RSSModel?
     
     init (_ model : RSSModel)
     {
         super.init(nibName: nil, bundle: nil)
+        
         self.model = model
     }
     
@@ -26,12 +26,6 @@ class StartViewController: UIViewController, RSSModelProtocol
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        model?.delegate = self;
-        
-        // Start loading data to Model
-        /*m_loadingThread = Thread.init(target: self, selector: #selector(threadParallelProc), object: model)
-        m_loadingThread?.start()*/
         
         let queue = DispatchQueue.global(qos: .userInitiated)
         
@@ -45,7 +39,6 @@ class StartViewController: UIViewController, RSSModelProtocol
         {
             self.dismiss(animated: true, completion: nil)
         }
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,57 +55,4 @@ class StartViewController: UIViewController, RSSModelProtocol
         // Pass the selected object to the new view controller.
     }
     */
-
-    /*
-        Function of thread for reading data to Model
-     */
-    /*@objc func threadParallelProc (argument: Any?) -> Void
-    {
-        weak var model = argument as! RSSModel?
-        
-        var exitNow : Bool = false
-        let runLoop : RunLoop = RunLoop.current
-        
-    
-        // Add the exitNow BOOL to the thread dictionary.
-        var threadDict : NSMutableDictionary? = nil
-        threadDict = Thread.current.threadDictionary;
-        
-        threadDict?.setValue(exitNow, forKey: "ThreadShouldExitNow")
-        
-        // Loading data - news list
-        model?.loadData()
-    
-        while (!exitNow)
-        {
-            // Run the run loop but timeout immediately if the input source isn't waiting to fire.
-            let date : Date = Date()
-            runLoop.run(until: date)
-    
-            // Check to see if an input source handler changed the exitNow value.
-            exitNow = ((threadDict?.value(forKey: "ThreadShouldExitNow")) != nil)
-        }
-    
-        return;
-    }*/
-    
-    /*
-        Method react on event finishing thread
-    */
-    func aThreadHasFinished ( object : Any? ) -> Void
-    {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    /////////////////////////////////////////////////////////////////////////////////////////
-    // Methods of protocol RSSModelProtocol
-    
-    func loadingDataDidFinish(model: RSSModel?) -> Void
-    {
-        // Stop thread
-        //m_loadingThread?.threadDictionary.setValue(true, forKey: "ThreadShouldExitNow")
-        
-        //self.performSelector(onMainThread: #selector(aThreadHasFinished(object:)), with: model, waitUntilDone: false)
-    }
-    
 }

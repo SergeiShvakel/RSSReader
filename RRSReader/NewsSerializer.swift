@@ -31,7 +31,7 @@ extension Alamofire.Request {
         let string = String(data: validData, encoding: .utf8)
         
         let xml = SWXMLHash.parse(string!)
-        print(xml["rss"]["channel"]["title"].element?.text)
+        //print(xml["rss"]["channel"]["title"].element?.text)
         
         var arrNews : [NewsRecord] = []
         

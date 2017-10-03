@@ -12,8 +12,7 @@ import RealmSwift
 
 class RSSModel
 {
-    var url : String;
-    var delegate : RSSModelProtocol? = nil
+    let url : String
     
     var rrsNewsRealm : Realm! //
     var newsList: Results<NewsRecord> {
@@ -27,24 +26,18 @@ class RSSModel
     init (url: String)
     {
         self.url = url
-        self.rrsNewsRealm = nil
-        
-        rrsNewsRealm = try! Realm();
+        self.rrsNewsRealm = try! Realm();
     }
     
     func clearData()->Void{
-        
         images.removeAll()
-        
     }
     
     func loadData()->Void
     {
-        var dataRequest : DataRequest? = nil
         let url : URLConvertible = self.url
         
-        dataRequest = Alamofire.request(url, method: HTTPMethod.get, parameters: nil, encoding: URLEncoding.default, headers: nil)
-        dataRequest!
+        Alamofire.request(url, method: HTTPMethod.get, parameters: nil, encoding: URLEncoding.default, headers: nil)
             .validate()
             .responseNewsArray(queue: nil)
             {
@@ -67,15 +60,22 @@ class RSSModel
                             rrsNewsRealm.add(value)
                         })
                     
-                case .failure(let error):
+                case .failure(_):
                     return
                 }
-            
-            if (self.delegate != nil){
-                self.delegate?.loadingDataDidFinish(model: self)
             }
-        }
         
         return
+    }
+    
+    func getImageByIndex (_ index : IndexPath) -> UIImage?
+    {
+        for image in images
+        {
+            if (image.0 == index){
+                return  image.1
+            }
+        }
+        return nil
     }
 }

@@ -16,9 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var startViewController: StartViewController? = nil
-    var navigateViewController : NavigateController? = nil          // Контроллер для окна с навигацией
+    var navigateViewController : NavigateController? = nil          // 
     
-    var model : RSSModel? = nil // Хранение и обработка данных
+    var model : RSSModel? = nil // Class for data
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -59,17 +59,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-    /*func showViewController () -> Void
-    {
-        var storyBoard : UIStoryboard? = nil
-        storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        
-        navigateViewController = storyBoard!.instantiateViewController(withIdentifier: "StartNavigateController") as? NavigateController
-        (navigateViewController?.viewControllers[0] as! TableViewController).model = model
-        
-        self.window!.rootViewController = self.navigateViewController
-        self.window!.makeKeyAndVisible()
-    }*/
 }
 
