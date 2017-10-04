@@ -20,6 +20,10 @@ class TableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        imageNews.layer.cornerRadius = 8.0
+        imageNews.clipsToBounds = true
+        
         // Initialization code
     }
 

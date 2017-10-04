@@ -13,9 +13,12 @@ import RealmSwift
 class TableViewController: UITableViewController {
 
     var model : RSSModel?
+    let dateFormat : DateFormatter = DateFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        dateFormat.dateFormat = "dd MMM yyyy"
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Refresh", style: .plain, target: self, action: #selector(didPressRefreshButton))
         
@@ -55,12 +58,10 @@ class TableViewController: UITableViewController {
         
         let oneNews = model?.newsList[indexPath.row]
         
-        let dateFormat : DateFormatter = DateFormatter()
-        dateFormat.dateFormat = "dd MMM yyyy"
-        
         cell?.titleNews?.text = oneNews?.titleNews
         cell?.dateNews.text = dateFormat.string(from: (oneNews?.pubDateNews)!)
         cell?.categoryNews.text = oneNews?.categoryNews
+        
         cell?.imageNews?.image = model?.getImageByIndex(indexPath)
         
         if (cell?.imageNews?.image == nil)
@@ -113,7 +114,6 @@ class TableViewController: UITableViewController {
         app?.navigateViewController?.pushViewController(detailViewController!, animated: true)
         
         tableView.deselectRow(at: indexPath, animated: false)
-        
     }
     
     func didPressRefreshButton() -> Void{

@@ -30,6 +30,9 @@ class DetailViewController: UIViewController {
             titleLabel.text = oneNews.titleNews
             descLabel.text = oneNews.descNews
             
+            imageNews.layer.cornerRadius = 8.0
+            imageNews.clipsToBounds = true
+            
             imageNews.image = model?.getImageByIndex(index!)
         }
     }
