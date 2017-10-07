@@ -47,7 +47,23 @@ extension Alamofire.Request {
                 newsItem.imageURLNews = (xmlElem.attribute(by: "url")?.text)!
             }
             
-            newsItem.descNews = elem["description"].element!.text
+            let strTemp = elem["description"].element!.text
+            
+            let leftTempl = "/>", rightTempl = "<br"
+            
+            let result = strTemp.range(of: leftTempl,
+                                    options: NSString.CompareOptions.literal,
+                                    range: strTemp.startIndex..<strTemp.endIndex,
+                                    locale: nil)
+            if (result != nil)
+            {
+                var text = strTemp.substring(from: strTemp.characters.index((result?.lowerBound)!, offsetBy: leftTempl.characters.count))
+                text = text.substring(to: (text.range(of: rightTempl)?.lowerBound)!)
+                
+                newsItem.descNews = text;
+            }
+            
+            
             
             arrNews.append(newsItem)
         }

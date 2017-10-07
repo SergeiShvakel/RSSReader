@@ -28,6 +28,7 @@ class DetailViewController: UIViewController {
             
             dateLabel.text = dateFormat.string(from: (oneNews.pubDateNews))
             titleLabel.text = oneNews.titleNews
+            
             descLabel.text = oneNews.descNews
             
             imageNews.layer.cornerRadius = 8.0
@@ -42,6 +43,11 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidLayoutSubviews() {
+        
+        descLabel.numberOfLines = 0
+        descLabel.sizeToFit()
+    }
 
     /*
     // MARK: - Navigation
