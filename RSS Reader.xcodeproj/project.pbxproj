@@ -34,7 +34,7 @@
 		49357146202ED56B008AED12 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		493D87D61F7592A7000A11DA /* NewsRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsRecord.swift; sourceTree = "<group>"; };
 		494EFFB91F7AE55000132F0D /* NewsSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsSerializer.swift; sourceTree = "<group>"; };
-		496B412C1F69C50B00FA8246 /* RRSReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RRSReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		496B412C1F69C50B00FA8246 /* RSS Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RSS Reader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		496B412F1F69C50B00FA8246 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		496B41311F69C50B00FA8246 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		496B41341F69C50B00FA8246 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -81,7 +81,7 @@
 		496B412D1F69C50B00FA8246 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				496B412C1F69C50B00FA8246 /* RRSReader.app */,
+				496B412C1F69C50B00FA8246 /* RSS Reader.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -146,9 +146,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		496B412B1F69C50A00FA8246 /* RRSReader */ = {
+		496B412B1F69C50A00FA8246 /* RSS Reader */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 496B413E1F69C50B00FA8246 /* Build configuration list for PBXNativeTarget "RRSReader" */;
+			buildConfigurationList = 496B413E1F69C50B00FA8246 /* Build configuration list for PBXNativeTarget "RSS Reader" */;
 			buildPhases = (
 				C3CF1F543A12C1FB03D33CC4 /* [CP] Check Pods Manifest.lock */,
 				496B41281F69C50A00FA8246 /* Sources */,
@@ -161,9 +161,9 @@
 			);
 			dependencies = (
 			);
-			name = RRSReader;
+			name = "RSS Reader";
 			productName = RRSReader;
-			productReference = 496B412C1F69C50B00FA8246 /* RRSReader.app */;
+			productReference = 496B412C1F69C50B00FA8246 /* RSS Reader.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -183,7 +183,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 496B41271F69C50A00FA8246 /* Build configuration list for PBXProject "RRSReader" */;
+			buildConfigurationList = 496B41271F69C50A00FA8246 /* Build configuration list for PBXProject "RSS Reader" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -196,7 +196,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				496B412B1F69C50A00FA8246 /* RRSReader */,
+				496B412B1F69C50A00FA8246 /* RSS Reader */,
 			);
 		};
 /* End PBXProject section */
@@ -452,7 +452,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		496B41271F69C50A00FA8246 /* Build configuration list for PBXProject "RRSReader" */ = {
+		496B41271F69C50A00FA8246 /* Build configuration list for PBXProject "RSS Reader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				496B413C1F69C50B00FA8246 /* Debug */,
@@ -461,7 +461,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		496B413E1F69C50B00FA8246 /* Build configuration list for PBXNativeTarget "RRSReader" */ = {
+		496B413E1F69C50B00FA8246 /* Build configuration list for PBXNativeTarget "RSS Reader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				496B413F1F69C50B00FA8246 /* Debug */,

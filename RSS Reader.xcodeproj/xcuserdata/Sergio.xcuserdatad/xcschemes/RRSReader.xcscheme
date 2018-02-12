@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "496B412B1F69C50A00FA8246"
-               BuildableName = "RRSReader.app"
-               BlueprintName = "RRSReader"
-               ReferencedContainer = "container:RRSReader.xcodeproj">
+               BuildableName = "RSS Reader.app"
+               BlueprintName = "RSS Reader"
+               ReferencedContainer = "container:RSS Reader.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,9 +34,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "496B412B1F69C50A00FA8246"
-            BuildableName = "RRSReader.app"
-            BlueprintName = "RRSReader"
-            ReferencedContainer = "container:RRSReader.xcodeproj">
+            BuildableName = "RSS Reader.app"
+            BlueprintName = "RSS Reader"
+            ReferencedContainer = "container:RSS Reader.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -58,9 +58,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "496B412B1F69C50A00FA8246"
-            BuildableName = "RRSReader.app"
-            BlueprintName = "RRSReader"
-            ReferencedContainer = "container:RRSReader.xcodeproj">
+            BuildableName = "RSS Reader.app"
+            BlueprintName = "RSS Reader"
+            ReferencedContainer = "container:RSS Reader.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -77,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "496B412B1F69C50A00FA8246"
-            BuildableName = "RRSReader.app"
-            BlueprintName = "RRSReader"
-            ReferencedContainer = "container:RRSReader.xcodeproj">
+            BuildableName = "RSS Reader.app"
+            BlueprintName = "RSS Reader"
+            ReferencedContainer = "container:RSS Reader.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
