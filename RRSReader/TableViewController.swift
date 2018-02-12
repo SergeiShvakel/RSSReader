@@ -7,20 +7,36 @@
 //
 
 import UIKit
-import Alamofire
 import RealmSwift
 
-class TableViewController: UITableViewController {
-
+class TableViewController: UIViewController {
+    
     var model : RSSModel?
-    let dateFormat : DateFormatter = DateFormatter()
+    
+    var nRefreshing: Bool = false
+    
+    @IBOutlet var tableViewOwn: TableView!
+
+    var tableViewData: TableViewData?
+    
+    override func viewWillAppear(_ animated: Bool){
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool){
+        super.viewDidAppear(animated)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dateFormat.dateFormat = "dd MMM yyyy"
-        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Refresh", style: .plain, target: self, action: #selector(didPressRefreshButton))
+        
+        tableViewData = TableViewData(model_: model!)
+        
+        // initialize View
+        tableViewOwn.dataSource =  tableViewData
+        tableViewOwn.delegate = tableViewData
         
         didPressRefreshButton()
     }
@@ -29,99 +45,17 @@ class TableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    @objc func didPressRefreshButton() -> Void{
         
-        let num = model?.newsList.count
-
-        return num!;
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        var cell : TableViewCell?
-            
-        cell = tableView.dequeueReusableCell(withIdentifier: "newsCell") as! TableViewCell?
-        if (cell == nil)
-        {
-            cell = TableViewCell.init(style: .default, reuseIdentifier: "newsCell")
-        }
-        else
-        {
-            cell?.imageNews.image = nil
-            cell?.request?.cancel()
-        }
-        
-        let oneNews = model?.newsList[indexPath.row]
-        
-        cell?.titleNews?.text = oneNews?.titleNews
-        cell?.dateNews.text = dateFormat.string(from: (oneNews?.pubDateNews)!)
-        cell?.categoryNews.text = oneNews?.categoryNews
-        
-        cell?.imageNews?.image = model?.getImageByIndex(indexPath)
-        
-        if (cell?.imageNews?.image == nil)
-        {
-            // Download picture from URL
-            if let mediaUrl = (oneNews?.imageURLNews)
-            {
-                cell?.request = Alamofire.request(mediaUrl)
-                    .response(){
-                        response in
-                        
-                        let image = UIImage(data: response.data!)
-                        cell?.imageNews!.image = image
-
-                        self.model?.images.append((indexPath, image))
-                }
-            }
-        }
-        
-        return cell!
-    }
-    
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "RSS Tut.by"
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        let height : CGFloat = 150.0;
-        
-        return height
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let app : AppDelegate? = UIApplication.shared.delegate as! AppDelegate?
-        
-        let storyBoard : UIStoryboard? = UIStoryboard(name: "Main", bundle: nil)
-        
-        let detailViewController : DetailViewController? =
-            storyBoard!.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController
-        
-        guard (detailViewController != nil) else {
-            return
-        }
-        
-        detailViewController?.index = indexPath
-        detailViewController?.model = model
-        
-        app?.navigateViewController?.pushViewController(detailViewController!, animated: true)
-        
-        tableView.deselectRow(at: indexPath, animated: false)
-    }
-    
-    func didPressRefreshButton() -> Void{
-        
-        model?.clearData()
+        nRefreshing = true
         
         let startViewController = StartViewController(model!)
-        self.present(startViewController, animated: true, completion: nil)
+        self.present(startViewController, animated: false, completion: nil)
+        
+        //model?.clearData()
+        
+        tableViewOwn?.reloadData()
     }
     
 }

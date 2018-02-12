@@ -11,16 +11,17 @@ import RealmSwift
 
 class StartViewController: UIViewController
 {
-    var model : RSSModel?
+    let model : RSSModel
     
     init (_ model : RSSModel)
     {
-        super.init(nibName: nil, bundle: nil)
-        
         self.model = model
+        super.init(nibName: nil, bundle: nil)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder)
+    {
+        model = RSSModel(url: "");
         super.init(coder: aDecoder)
     }
     
@@ -30,15 +31,15 @@ class StartViewController: UIViewController
         let queue = DispatchQueue.global(qos: .userInitiated)
         
         let loadingDataDispItem = DispatchWorkItem(){
-            self.model?.loadData()
+            self.model.loadData()
         }
-        
-        queue.async(execute: loadingDataDispItem)
         
         loadingDataDispItem.notify(queue: DispatchQueue.main)
         {
             self.dismiss(animated: true, completion: nil)
         }
+        
+        queue.async(execute: loadingDataDispItem)
     }
 
     override func didReceiveMemoryWarning() {

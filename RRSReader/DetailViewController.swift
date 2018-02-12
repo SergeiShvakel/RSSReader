@@ -21,7 +21,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let oneNews = model?.newsList[(index?.row)!]
+        if let oneNews = model?.newsList[(model?.newsList.count)! - (index?.row)! - 1]
         {
             let dateFormat : DateFormatter = DateFormatter()
             dateFormat.dateFormat = "dd MMM yyyy HH:mm:ss"

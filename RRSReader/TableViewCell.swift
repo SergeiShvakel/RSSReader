@@ -11,18 +11,27 @@ import Alamofire
 
 class TableViewCell: UITableViewCell {
 
-    @IBOutlet weak var titleNews: UILabel!
-    @IBOutlet weak var categoryNews: UILabel!
-    @IBOutlet weak var dateNews: UILabel!
-    @IBOutlet weak var imageNews: UIImageView!
+    @IBOutlet var titleNews: UILabel!
+    @IBOutlet var categoryNews: UILabel!
+    @IBOutlet var dateNews: UILabel!
+    @IBOutlet var imageNews: UIImageView!
     
     var request: Alamofire.DataRequest?
+    var isRequesting: Bool = false
+    
+    class var reuseIdentifier: String {
+        get {
+            return "newsCell"
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        imageNews.layer.cornerRadius = 8.0
-        imageNews.clipsToBounds = true
+        if imageNews != nil {
+            imageNews.layer.cornerRadius = 8.0
+            imageNews.clipsToBounds = true
+        }
         
         // Initialization code
     }
@@ -32,5 +41,5 @@ class TableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }

@@ -31,7 +31,6 @@ extension Alamofire.Request {
         let string = String(data: validData, encoding: .utf8)
         
         let xml = SWXMLHash.parse(string!)
-        //print(xml["rss"]["channel"]["title"].element?.text)
         
         var arrNews : [NewsRecord] = []
         
@@ -47,23 +46,58 @@ extension Alamofire.Request {
                 newsItem.imageURLNews = (xmlElem.attribute(by: "url")?.text)!
             }
             
-            let strTemp = elem["description"].element!.text
+            var strTemp: String = elem["description"].element!.text
+            
+            let findSubstr: ((String, String) -> Int) = {stringin,substring in
+                
+                var ifind : Int = -1
+                var i = 0;
+                
+                while (i < stringin.count)
+                {
+                    var bFind = false, bExit = false
+                    for j in 0...substring.count-1
+                    {
+                        let index1 = stringin.index(stringin.startIndex, offsetBy: i)
+                        let index2 = substring.index(substring.startIndex, offsetBy: j)
+                        
+                        if stringin[index1] != substring[index2] {
+                            bExit = true
+                            break
+                        }
+                        else{
+                            i += 1
+                            bFind = true
+                        }
+                    }
+                    if !bExit {
+                        ifind = i-substring.count
+                        break
+                    }
+                    else{
+                        i = i + (bFind ? 0 : 1)
+                    }
+                }
+                return ifind;
+            }
             
             let leftTempl = "/>", rightTempl = "<br"
             
-            let result = strTemp.range(of: leftTempl,
-                                    options: NSString.CompareOptions.literal,
-                                    range: strTemp.startIndex..<strTemp.endIndex,
-                                    locale: nil)
-            if (result != nil)
-            {
-                var text = strTemp.substring(from: strTemp.characters.index((result?.lowerBound)!, offsetBy: leftTempl.characters.count))
-                text = text.substring(to: (text.range(of: rightTempl)?.lowerBound)!)
+            var nFindInd = findSubstr(strTemp, leftTempl)
+            if nFindInd != -1 {
                 
-                newsItem.descNews = text;
+                let leftIndex =  strTemp.index(strTemp.startIndex, offsetBy: nFindInd+leftTempl.count)
+                strTemp = String (strTemp[leftIndex..<strTemp.endIndex])
+                
+                nFindInd = findSubstr(strTemp, rightTempl)
+                if nFindInd != -1 {
+                    let rightIndex =  strTemp.index(strTemp.startIndex, offsetBy: nFindInd)
+                    strTemp = String (strTemp[strTemp.startIndex..<rightIndex])
+                }
+                //print (strTemp)
+                
+                newsItem.descNews = strTemp;
             }
-            
-            
             
             arrNews.append(newsItem)
         }
