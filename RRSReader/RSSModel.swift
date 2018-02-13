@@ -57,13 +57,16 @@ class RSSModel
         images.removeAll()
     }
     
-    func loadData()->Void
+    func loadData(completionHandler: @escaping ()->Void)->Void
     {
+        // debug
+        print ("RSSModel.loadData: start")
+        
         let url : URLConvertible = self.url
         
         Alamofire.request(url, method: HTTPMethod.get, parameters: nil, encoding: URLEncoding.default, headers: nil)
             .validate()
-            .responseNewsArray(queue: nil)
+            .responseNewsArray(queue: DispatchQueue.global(qos: .utility))
             {
                 responseData in
                 switch responseData.result {
@@ -77,9 +80,16 @@ class RSSModel
                             rrsNewsRealm.deleteAll()
                         })*/
                         
+                        // Set of NewsRecord
+                        var newsList: Results<NewsRecord> {
+                            get {
+                                return rrsNewsRealm.objects(NewsRecord.self)
+                            }
+                        }
+                        
                         //
-                        var nMaxNumber: Int = self.newsList.count
-                        var lastPubDateNews: Date = (nMaxNumber > 0 ? self.newsList[nMaxNumber-1].pubDateNews : Date(timeIntervalSince1970: 0))
+                        var nMaxNumber: Int = newsList.count
+                        var lastPubDateNews: Date = (nMaxNumber > 0 ? newsList[nMaxNumber-1].pubDateNews : Date(timeIntervalSince1970: 0))
                         
                         for i in (0...value.count-1).reversed(){
                             
@@ -95,11 +105,19 @@ class RSSModel
                                 })
                             }
                         }
+                        DispatchQueue.main.async(execute:  completionHandler)
                     
                 case .failure(_):
+                    DispatchQueue.main.async(execute:  completionHandler)
                     return
                 }
+                
+                // debug
+                print ("RSSModel.loadData.responseNewsArray: exit")
             }
+        
+        // debug
+        print ("RSSModel.loadData: exit")
         
         return
     }

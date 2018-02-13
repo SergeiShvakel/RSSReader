@@ -27,18 +27,26 @@ class StartViewController: UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
+     
+        let dimAlphaRedColor =  UIColor.white.withAlphaComponent(0.7)
+        self.view.backgroundColor =  dimAlphaRedColor
         
-        let queue = DispatchQueue.global(qos: .userInitiated)
-        
-        let loadingDataDispItem = DispatchWorkItem(){
-            self.model.loadData()
-        }
-        
-        loadingDataDispItem.notify(queue: DispatchQueue.main)
-        {
+        let completeHandler: ()->Void = {
+            // debug
+            print ("StartViewController.viewDidLoad: dismiss")
+            
             self.dismiss(animated: true, completion: nil)
         }
         
+        let queue = DispatchQueue.global(qos: .utility)
+        
+        let loadingDataDispItem = DispatchWorkItem(){
+            self.model.loadData(completionHandler: completeHandler)
+        }
+        loadingDataDispItem.notify(queue: DispatchQueue.main)
+        {
+            
+        }
         queue.async(execute: loadingDataDispItem)
     }
 

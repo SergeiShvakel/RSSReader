@@ -25,6 +25,8 @@ class TableViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool){
         super.viewDidAppear(animated)
+        
+        tableViewOwn?.reloadData()
     }
     
     override func viewDidLoad() {
@@ -52,10 +54,6 @@ class TableViewController: UIViewController {
         
         let startViewController = StartViewController(model!)
         self.present(startViewController, animated: false, completion: nil)
-        
-        //model?.clearData()
-        
-        tableViewOwn?.reloadData()
     }
     
 }
